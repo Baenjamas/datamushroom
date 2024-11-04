@@ -97,13 +97,10 @@ def main():
             st.write("Recall: ", recall)
             plot_metrics(metrics)
 
-
-    
-
      ############### Step 4 Training a Logistic Regression Classifier ##########
      # Start you Code here #
 
-        elif classifier == 'Logistic Regression':
+       elif classifier == 'Logistic Regression':
         st.sidebar.subheader("Model Hyperparameters")
         C = st.sidebar.number_input("C (Regularization parameter)", 0.01, 10.0, step=0.01, key='logistic_C')
 
@@ -124,13 +121,8 @@ def main():
             st.write("Recall: ", recall)
             plot_metrics(metrics, model, x_test, y_test)
 
-
-
-
-
-     ############### Step 5 Training a Random Forest Classifier ##########
-    # Start you Code here #
-         elif classifier == 'Random Forest':
+    ############### Step 5 Training a Random Forest Classifier ##########
+    elif classifier == 'Random Forest':
         st.sidebar.subheader("Model Hyperparameters")
         n_estimators = st.sidebar.number_input("Number of trees (n_estimators)", 1, 100, step=1, key='n_estimators')
         max_depth = st.sidebar.number_input("Max Depth", 1, 20, step=1, key='max_depth')
@@ -153,20 +145,9 @@ def main():
             plot_metrics(metrics, model, x_test, y_test)
 
 
-
-
-
-
-
     if st.sidebar.checkbox("Show raw data", False):
         st.subheader("Mushroom dataset")
         st.write(df)
-
-    
-    
-    
-
-
 
 
 if __name__ == '__main__':
